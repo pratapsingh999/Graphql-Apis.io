@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql', // Replace this with your actual GraphQL API endpoint
+  uri: 'https://rickandmortyapi.com/graphql', // GraphQL API endpoint for the Rick and Morty API
   cache: new InMemoryCache(),
 });
 

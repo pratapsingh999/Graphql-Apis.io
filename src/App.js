@@ -1,6 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CharacterList from './CharacterList';
-// import BookList from './BookList';
+import CharacterInfo from './CharacterInfo';
 
 const App = () => {
   return (
@@ -9,17 +10,47 @@ const App = () => {
     //   <BookList />
     // </div>
 
+  // <div>
+  //     <h1>Rick and Morty API</h1>
+  //     <CharacterList />
+  //   </div>
 
-    <div>
-    <h1>Rick and Morty API</h1>
-    <CharacterList />
+
+  <Router>
+  <div>
+    <h1 className='name'>Rick and Morty API</h1>
+    <Switch>
+      <Route exact path="/" component={CharacterList} />
+      <Route path="/characters/:id" component={CharacterInfo} />
+    </Switch>
   </div>
+</Router>
 
-//   <div>
-//   <h1>Rick and Morty API</h1>
-//   <CharacterList name="rick" status="alive" />
-// </div>
+
+
   );
 };
 
 export default App;
+
+// "/characters/:id" 
+
+
+// import React from 'react';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import CharacterList from './CharacterList';
+// import CharacterInfo from './CharacterInfo';
+
+// const App = () => {
+//   return (
+//     <div>
+//       <h1>Rick and Morty API</h1>
+//       <Routes>
+//         <Route path="/" element={<CharacterList />} />
+//         <Route path="/characters/:id" element={<CharacterInfo />} />
+//       </Routes>
+//     </div>
+//   );
+// };
+
+// export default App;
